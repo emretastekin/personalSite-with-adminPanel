@@ -2,14 +2,14 @@
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Core_Proje.ViewComponents.Feature
+namespace Core_Proje.ViewComponents.About
 {
-    public class FeatureList: ViewComponent
+    public class AboutList : ViewComponent
     {
-        FeatureManager featureManager = new FeatureManager(new EfFeatureDal());
+        AboutManager aboutManager = new AboutManager(new EfAboutDal());
         public IViewComponentResult Invoke()
         {
-            var values = featureManager.TGetList();
+            var values = aboutManager.TGetList();
 
             return View(values);
         }
